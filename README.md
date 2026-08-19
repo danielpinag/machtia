@@ -138,6 +138,13 @@ the plug; the assessment works the same way:
 Read ~/.claude/machtia/skills/machtia-assess/SKILL.md and follow it.
 ```
 
+One practical tip for the playbook path: editor agents (Cursor, Copilot)
+scope their file tools to the open workspace, and LEVEL.md lives outside
+your projects — so run assessments with `~/.claude/machtia` itself open as
+the workspace, or start a CLI agent from that directory. Regular work
+sessions are unaffected: there the agent only *reads* the framework files,
+and appends evidence via its terminal access when needed.
+
 ## What runs when
 
 | What | How often |
