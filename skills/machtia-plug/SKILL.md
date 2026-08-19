@@ -16,14 +16,14 @@ Conversation in Spanish (es-MX); everything written to files in English.
    confirm with the developer if ambiguous.
 2. **Ask for the learning goals.** Which areas is this project meant to grow?
    Suggest candidates from the project's stack and from gaps noted in
-   `~/personal_projects/machtia/LEVEL.md`. Wait for the developer's answer.
+   `~/.claude/machtia/LEVEL.md`. Wait for the developer's answer.
 3. **Edit the project's CLAUDE.md** (create it if missing). Add — near the
    top, after the project intro — a section:
 
    ```markdown
    ## Learning Mode — MachtIA
 
-   @~/personal_projects/machtia/MACHTIA.md
+   @~/.claude/machtia/MACHTIA.md
 
    Learning goals for this project: <areas, comma-separated>.
    ```

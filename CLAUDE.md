@@ -8,7 +8,7 @@ git-ignored — each developer creates theirs from
 
 ## Learning Mode — MachtIA
 
-@~/personal_projects/machtia/MACHTIA.md
+@MACHTIA.md
 
 Learning goals for this project: AI-assisted development workflows,
 Claude Code configuration (skills, imports, memory).

@@ -22,7 +22,7 @@ project CLAUDE.md ──imports──▶ MACHTIA.md (the rules)
 ```
 
 1. **`MACHTIA.md`** — the learning-mode rules. Every project imports it from
-   its `CLAUDE.md` with one line: `@~/personal_projects/machtia/MACHTIA.md`.
+   its `CLAUDE.md` with one line: `@~/.claude/machtia/MACHTIA.md`.
 2. **`LEVEL.md`** — the developer's technical profile: a skill map on a
    5-level Nahuatl-named scale (mapped to the Dreyfus model), an append-only
    evidence log, and promotion tracking. Levels rise only with demonstrated
@@ -48,15 +48,20 @@ session, regardless of the project — that is what makes `/machtia-assess` and
 `/machtia-plug` available everywhere. Clone the repo and symlink the skills:
 
 ```sh
-git clone https://github.com/danielpinag/machtia.git ~/personal_projects/machtia
+# clone wherever you keep your repos…
+git clone https://github.com/danielpinag/machtia.git
+# …and pin it at the canonical path (skip if you cloned directly there):
+ln -s "$(pwd)/machtia" ~/.claude/machtia
+
 mkdir -p ~/.claude/skills
-ln -s ~/personal_projects/machtia/skills/machtia-assess ~/.claude/skills/machtia-assess
-ln -s ~/personal_projects/machtia/skills/machtia-plug ~/.claude/skills/machtia-plug
+ln -s ~/.claude/machtia/skills/machtia-assess ~/.claude/skills/machtia-assess
+ln -s ~/.claude/machtia/skills/machtia-plug ~/.claude/skills/machtia-plug
 ```
 
-The clone path matters: connected projects import the rules via
-`@~/personal_projects/machtia/MACHTIA.md`, so the repo must live at
-`~/personal_projects/machtia`.
+The canonical path matters: CLAUDE.md imports need a literal path that is the
+same on every machine, and connected projects import the rules via
+`@~/.claude/machtia/MACHTIA.md` — the symlink provides that path no matter
+where your clone actually lives.
 
 Then build your profile (personal, git-ignored):
 
@@ -78,7 +83,7 @@ That leaves the project's `CLAUDE.md` with a section like:
 ```markdown
 ## Learning Mode — MachtIA
 
-@~/personal_projects/machtia/MACHTIA.md
+@~/.claude/machtia/MACHTIA.md
 
 Learning goals for this project: <areas this project is meant to grow>.
 ```

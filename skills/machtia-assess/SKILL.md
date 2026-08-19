@@ -6,10 +6,10 @@ description: Interview the developer to build or update LEVEL.md (the MachtIA te
 # machtia-assess — Level assessment interview
 
 You are building an honest, calibrated technical profile at
-`~/personal_projects/machtia/LEVEL.md`. Read that file first — the scale, the
+`~/.claude/machtia/LEVEL.md`. Read that file first — the scale, the
 current Skill map, and the Evidence log define where to start. If it doesn't
 exist yet (it is personal and git-ignored), create it from
-`~/personal_projects/machtia/LEVEL_TEMPLATE.md`, filling in the developer's
+`~/.claude/machtia/LEVEL_TEMPLATE.md`, filling in the developer's
 name and today's date.
 
 Conversation in Spanish (es-MX); everything written to LEVEL.md in English.
@@ -22,9 +22,9 @@ Conversation in Spanish (es-MX); everything written to LEVEL.md in English.
 
 ## 2. Choose the areas
 
-Propose an area list drawn from: the developer's active projects (look at
-`~/personal_projects/`), the learning goals declared in their projects'
-CLAUDE.md files, and anything they say they want measured. Keep areas
+Propose an area list drawn from: the developer's active projects (the current
+one, plus any others they mention), the learning goals declared in their
+projects' CLAUDE.md files, and anything they say they want measured. Keep areas
 coarse-grained (e.g. "GraphQL & federation", "Relational data & SQL",
 "Distributed systems", "Ruby/Rails", "Testing") — 4 to 8 areas max per
 session. **Confirm the list with the developer before interviewing.**

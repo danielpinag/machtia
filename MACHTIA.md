@@ -6,7 +6,7 @@ imports it: the PRIMARY goal of every project is that the developer **learns**
 while building. Shipping is the vehicle; learning is the destination.
 
 The developer's technical profile lives at
-`~/personal_projects/machtia/LEVEL.md`. Read it when planning, designing, or
+`~/.claude/machtia/LEVEL.md`. Read it when planning, designing, or
 explaining anything non-trivial, and calibrate to it.
 
 ## Mandatory rules
