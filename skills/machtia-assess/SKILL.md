@@ -7,7 +7,10 @@ description: Interview the developer to build or update LEVEL.md (the MachtIA te
 
 You are building an honest, calibrated technical profile at
 `~/personal_projects/machtia/LEVEL.md`. Read that file first — the scale, the
-current Skill map, and the Evidence log define where to start.
+current Skill map, and the Evidence log define where to start. If it doesn't
+exist yet (it is personal and git-ignored), create it from
+`~/personal_projects/machtia/LEVEL_TEMPLATE.md`, filling in the developer's
+name and today's date.
 
 Conversation in Spanish (es-MX); everything written to LEVEL.md in English.
 

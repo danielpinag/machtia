@@ -1,8 +1,10 @@
 # MachtIA — framework repo
 
 This repo holds the MachtIA learning framework itself: the rules
-([MACHTIA.md](MACHTIA.md)), the developer profile ([LEVEL.md](LEVEL.md)), and
-the skills under `skills/` (symlinked into `~/.claude/skills/`).
+([MACHTIA.md](MACHTIA.md)), the developer profile (`LEVEL.md`, personal and
+git-ignored — each developer creates theirs from
+[LEVEL_TEMPLATE.md](LEVEL_TEMPLATE.md)), and the skills under `skills/`
+(symlinked into `~/.claude/skills/`).
 
 ## Learning Mode — MachtIA
 
