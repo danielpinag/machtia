@@ -81,13 +81,28 @@ Then build your profile (personal, git-ignored):
 
 ## Connecting a project
 
-In a Claude Code session **inside the project** you want to connect:
+From **Claude Code**, in a session inside the project you want to connect:
 
 ```
-/machtia-plug          # adds the import + learning goals to its CLAUDE.md
+/machtia-plug          # asks for learning goals, writes both files below
 ```
 
-That leaves the project's `CLAUDE.md` with a section like:
+From **any other supported assistant** (Cursor, GitHub Copilot, anything
+that reads AGENTS.md): a SKILL.md is a plain-markdown playbook — Claude
+Code's skill packaging only adds the auto-trigger — so point your agent at
+the same file. In a session inside the project, ask:
+
+```
+Read ~/.claude/machtia/skills/machtia-plug/SKILL.md and follow it
+to connect this project.
+```
+
+Either way, the `~/.claude/machtia` symlink from
+[Installation](#installation-once-per-machine) must exist first — it is what
+makes these paths work on every machine (the `~/.claude/skills/` links
+matter only to Claude Code).
+
+Connecting leaves the project's `CLAUDE.md` with a section like:
 
 ```markdown
 ## Learning Mode — MachtIA
@@ -114,10 +129,14 @@ calibrated to your LEVEL.md.
 
 Anything else that reads the AGENTS.md standard (Codex CLI, Gemini CLI,
 Windsurf, Zed, …) gets the same rules-level support for free. The skills
-(`machtia-assess`, `machtia-plug`) are Claude Code skills and stay there by
-design: they are occasional setup tools — connect a project or run an
-assessment from Claude Code, then work day-to-day from whichever assistant
-you like.
+(`machtia-assess`, `machtia-plug`) are packaged as Claude Code skills, but
+each SKILL.md is a plain-markdown playbook any agentic assistant can follow
+when pointed at it — see [Connecting a project](#connecting-a-project) for
+the plug; the assessment works the same way:
+
+```
+Read ~/.claude/machtia/skills/machtia-assess/SKILL.md and follow it.
+```
 
 ## What runs when
 
@@ -126,7 +145,11 @@ you like.
 | Installation block | Once per machine (idempotent — re-run freely). |
 | `/machtia-assess` | Once, to create your profile. After that only on demand: a new area, or one flagged rusty 🕸. **Not** per project. |
 | `/machtia-plug` | Once **per project**, the day you connect it. |
-| A regular work session | Nothing. Claude Code loads the project's `CLAUDE.md` automatically, and its `@~/.claude/machtia/MACHTIA.md` import pulls in the rules. |
+| A regular work session | Nothing. Claude Code loads the project's `CLAUDE.md` automatically, and its `@~/.claude/machtia/MACHTIA.md` import pulls in the rules; other assistants load `AGENTS.md`. |
+
+The `/command` form is Claude Code's; from any other assistant, point the
+agent at the corresponding SKILL.md instead (see
+[Connecting a project](#connecting-a-project)).
 
 Working on several connected projects at the same time is the normal case,
 not a special one: they all read and write the **same** LEVEL.md, each
