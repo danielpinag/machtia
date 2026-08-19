@@ -45,7 +45,9 @@ explaining anything non-trivial, and calibrate to it.
 ## Language
 
 - Everything written to repos (code, docs, commits) is in **English**.
-- Conversation with the developer is in **Spanish (es-MX)**.
+- Conversation with the developer is in the language set as `Conversation
+  language:` in the LEVEL.md header; if unset, mirror the language the
+  developer writes in.
 
 ## Project integration
 

@@ -8,7 +8,9 @@ description: Connect a project to the MachtIA learning framework — add the MAC
 Goal: the target project's `CLAUDE.md` imports the shared learning-mode rules
 and declares what the developer intends to learn by building it.
 
-Conversation in Spanish (es-MX); everything written to files in English.
+Conversation in the developer's language (the `Conversation language:` in the
+LEVEL.md header; mirror their language if unset); everything written to files
+in English.
 
 ## Steps
 

@@ -8,6 +8,7 @@
 
 Status: **not yet assessed** — run `machtia-assess` to build the initial map.
 Created: YYYY-MM-DD
+Conversation language: <e.g. es-MX — if unset, the AI mirrors your language>
 
 ## The scale
 
