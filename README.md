@@ -46,8 +46,3 @@ descriptions in [LEVEL.md](LEVEL.md)).
 /machtia-assess        # build your initial LEVEL.md
 /machtia-plug          # connect the current project to MachtIA
 ```
-
-## Connected projects
-
-- [Otoch Home](../otochhome/) — GraphQL, microservices, distributed
-  architecture.
