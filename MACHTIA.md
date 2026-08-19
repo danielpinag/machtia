@@ -28,7 +28,11 @@ explaining anything non-trivial, and calibrate to it.
 4. **Record evidence.** After evaluating the answer, append one line to the
    Evidence log in LEVEL.md: date, area, what was probed, verdict
    (`solid` / `partial` / `gap`). Levels grow from this log — organically,
-   never by time alone.
+   never by time alone. When the log grows past ~150 lines, propose rotating
+   entries older than 90 days, verbatim, into
+   `~/.claude/machtia/EVIDENCE_ARCHIVE.md` (same format, append-only): the
+   Skill map's last-evidence dates keep rusty detection working, and
+   promotion checks search the archive too.
 5. **Controlled pace.** At most one significant service, feature, or new
    concept per session. Depth over speed. If the developer pushes for more,
    surface this rule and let them decide.

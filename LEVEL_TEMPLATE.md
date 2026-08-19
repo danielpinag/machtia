@@ -39,6 +39,11 @@ from each project's learning goals._
 
 Format: `YYYY-MM-DD — [area] what was probed — verdict (solid/partial/gap) — project`
 
+Rotation: past ~150 lines, entries older than 90 days move verbatim to
+`EVIDENCE_ARCHIVE.md` (personal and git-ignored, like this file). The Skill
+map keeps each area's last-evidence date, so rusty 🕸 detection is unaffected;
+promotion checks search the archive too.
+
 _No entries yet._
 
 ## Promotion tracker

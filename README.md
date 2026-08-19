@@ -50,13 +50,20 @@ session, regardless of the project — that is what makes `/machtia-assess` and
 ```sh
 # clone wherever you keep your repos…
 git clone https://github.com/danielpinag/machtia.git
-# …and pin it at the canonical path (skip if you cloned directly there):
-ln -s "$(pwd)/machtia" ~/.claude/machtia
+cd machtia
+
+# …and pin it at the canonical path:
+ln -sfn "$(pwd)" ~/.claude/machtia
 
 mkdir -p ~/.claude/skills
-ln -s ~/.claude/machtia/skills/machtia-assess ~/.claude/skills/machtia-assess
-ln -s ~/.claude/machtia/skills/machtia-plug ~/.claude/skills/machtia-plug
+ln -sfn ~/.claude/machtia/skills/machtia-assess ~/.claude/skills/machtia-assess
+ln -sfn ~/.claude/machtia/skills/machtia-plug ~/.claude/skills/machtia-plug
 ```
+
+The block is idempotent — safe to re-run any time (e.g. after moving the
+clone). `-f` replaces an existing link instead of failing; `-n` stops `ln`
+from following an existing symlink-to-a-directory and planting the new link
+*inside* it, which is how you end up with infinite symlink loops.
 
 The canonical path matters: CLAUDE.md imports need a literal path that is the
 same on every machine, and connected projects import the rules via
@@ -90,3 +97,35 @@ Learning goals for this project: <areas this project is meant to grow>.
 
 From then on, every session in that project runs under the MachtIA rules,
 calibrated to your LEVEL.md.
+
+## What runs when
+
+| What | How often |
+|------|-----------|
+| Installation block | Once per machine (idempotent — re-run freely). |
+| `/machtia-assess` | Once, to create your profile. After that only on demand: a new area, or one flagged rusty 🕸. **Not** per project. |
+| `/machtia-plug` | Once **per project**, the day you connect it. |
+| A regular work session | Nothing. Claude Code loads the project's `CLAUDE.md` automatically, and its `@~/.claude/machtia/MACHTIA.md` import pulls in the rules. |
+
+Working on several connected projects at the same time is the normal case,
+not a special one: they all read and write the **same** LEVEL.md, each
+project declares its own learning goals in its own CLAUDE.md, and every
+evidence line is tagged with the project it came from.
+
+## Scaling
+
+One profile per developer — never one file per technology. The part the AI
+reads to calibrate, the Skill map, stays small because areas are
+coarse-grained ("Ruby/Rails", not "ActiveRecord callbacks"); splitting it per
+area would multiply the common read (the whole map, since a session usually
+touches several areas) to optimize the rare one (deep per-area history). Note
+that LEVEL.md is not loaded into context every session anyway — MACHTIA.md
+instructs the AI to read it on demand, when planning, designing, or
+explaining something non-trivial.
+
+What does grow without bound is the Evidence log (~one line per work block),
+so it rotates by *temperature* instead: past ~150 lines, entries older than
+90 days move verbatim to `EVIDENCE_ARCHIVE.md` (personal and git-ignored,
+like LEVEL.md). The 90-day window mirrors the rusty 🕸 rule, the Skill map
+keeps each area's last-evidence date, and promotion checks search the
+archive — so nothing downstream breaks.

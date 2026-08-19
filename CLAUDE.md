@@ -16,6 +16,8 @@ Claude Code configuration (skills, imports, memory).
 ## Conventions
 
 - LEVEL.md's Evidence log and History are **append-only**; the Skill map and
-  Promotion tracker are the only sections edited in place.
+  Promotion tracker are the only sections edited in place. The one sanctioned
+  exception: rotating old evidence verbatim into EVIDENCE_ARCHIVE.md, per
+  MACHTIA.md rule 4 — a move, never a rewrite.
 - Changes to the rules in MACHTIA.md affect every connected project — discuss
   them with the developer before editing.
