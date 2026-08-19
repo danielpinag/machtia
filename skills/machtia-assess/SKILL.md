@@ -12,9 +12,8 @@ exist yet (it is personal and git-ignored), create it from
 `~/.claude/machtia/LEVEL_TEMPLATE.md`, filling in the developer's
 name and today's date.
 
-Conversation in the developer's language (the `Conversation language:` in the
-LEVEL.md header; mirror their language if unset); everything written to
-LEVEL.md in English.
+Conversation in English unless the LEVEL.md header sets a `Conversation
+language:`; everything written to LEVEL.md in English.
 
 ## 1. Scope
 

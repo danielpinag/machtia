@@ -48,13 +48,18 @@ explaining anything non-trivial, and calibrate to it.
 
 ## Language
 
-- Everything written to repos (code, docs, commits) is in **English**.
-- Conversation with the developer is in the language set as `Conversation
-  language:` in the LEVEL.md header; if unset, mirror the language the
-  developer writes in.
+- The base language of the framework is **English**: everything written to
+  repos (code, docs, commits), and the conversation itself unless the
+  developer opts out.
+- To opt out of English conversation, set `Conversation language:` in the
+  LEVEL.md header (e.g. `es-MX`); when set, converse in that language.
 
 ## Project integration
 
-Each project imports this file from its `CLAUDE.md` and declares its own
+Each project connects through two files, both written by `machtia-plug`: its
+`CLAUDE.md` imports this file with `@~/.claude/machtia/MACHTIA.md` (Claude
+Code), and its `AGENTS.md` carries a Learning Mode section that points any
+other assistant reading the AGENTS.md standard (Cursor, GitHub Copilot, …)
+to this file, with a short digest as fallback. Both declare the same
 learning goals (which areas of LEVEL.md the project is meant to grow).
 Project-specific rules **add to** these rules; they never override them.

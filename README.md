@@ -22,7 +22,9 @@ project CLAUDE.md ──imports──▶ MACHTIA.md (the rules)
 ```
 
 1. **`MACHTIA.md`** — the learning-mode rules. Every project imports it from
-   its `CLAUDE.md` with one line: `@~/.claude/machtia/MACHTIA.md`.
+   its `CLAUDE.md` with one line — `@~/.claude/machtia/MACHTIA.md` — and
+   points every other assistant at it from its `AGENTS.md` (see
+   [Supported assistants](#supported-assistants)).
 2. **`LEVEL.md`** — the developer's technical profile: a skill map on a
    5-level Nahuatl-named scale (mapped to the Dreyfus model), an append-only
    evidence log, and promotion tracking. Levels rise only with demonstrated
@@ -95,8 +97,27 @@ That leaves the project's `CLAUDE.md` with a section like:
 Learning goals for this project: <areas this project is meant to grow>.
 ```
 
+It also writes (or updates) the project's `AGENTS.md` with a Learning Mode
+section — a reference to the same rules plus a short digest as fallback — so
+the project stays in learning mode outside Claude Code too.
+
 From then on, every session in that project runs under the MachtIA rules,
 calibrated to your LEVEL.md.
+
+## Supported assistants
+
+| Assistant | How the rules load | Support |
+|-----------|--------------------|---------|
+| **Claude Code** | `CLAUDE.md` `@`-import injects MACHTIA.md into every session | Full: rules + skills. |
+| **Cursor** | Reads `AGENTS.md` natively and follows the reference to MACHTIA.md | Rules. |
+| **GitHub Copilot** | Reads `AGENTS.md` natively and follows the reference to MACHTIA.md | Rules. Its cloud coding agent (github.com) cannot reach `~/`, so there it falls back to the digest inside AGENTS.md. |
+
+Anything else that reads the AGENTS.md standard (Codex CLI, Gemini CLI,
+Windsurf, Zed, …) gets the same rules-level support for free. The skills
+(`machtia-assess`, `machtia-plug`) are Claude Code skills and stay there by
+design: they are occasional setup tools — connect a project or run an
+assessment from Claude Code, then work day-to-day from whichever assistant
+you like.
 
 ## What runs when
 
