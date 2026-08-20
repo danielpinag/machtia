@@ -53,6 +53,15 @@ explaining anything non-trivial, and calibrate to it.
   developer opts out.
 - To opt out of English conversation, set `Conversation language:` in the
   LEVEL.md header (e.g. `es-MX`); when set, converse in that language.
+- **Concepts keep their original names.** Whatever the conversation language,
+  technical concepts, patterns, and terms are always named in the language
+  they were coined in — English in practically every case, so default to
+  English. Explain in the conversation language, but never translate the term
+  itself: say "eventual consistency" or "failure decoupling", never a
+  translated equivalent the developer won't find in docs, books, or job
+  interviews. A gloss in the conversation language may follow on first
+  mention. Evidence log entries and Skill map area names follow the same
+  rule, so the log stays searchable.
 
 ## Project integration
 
