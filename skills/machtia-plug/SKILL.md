@@ -48,7 +48,9 @@ language:`; everything written to files in English.
    before implementing (present alternatives, wait for the developer's
    decision); calibrate depth to `~/.claude/machtia/LEVEL.md`; close every
    work block with one comprehension question and append the evidence to
-   LEVEL.md; at most one significant new concept per session.
+   LEVEL.md; at most one significant new concept per session; whatever the
+   conversation language, name technical concepts in their original (almost
+   always English) form, never translated.
 
    Learning goals for this project: <areas, comma-separated>.
    ```

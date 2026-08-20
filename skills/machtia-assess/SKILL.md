@@ -13,7 +13,11 @@ exist yet (it is personal and git-ignored), create it from
 name and today's date.
 
 Conversation in English unless the LEVEL.md header sets a `Conversation
-language:`; everything written to LEVEL.md in English.
+language:`; everything written to LEVEL.md in English. Whatever the
+conversation language, technical concepts keep their original (almost always
+English) names — per the Language section of MACHTIA.md: say "flaky test" or
+"non-deterministic data", never a translated equivalent, in questions,
+verdicts, and Evidence log lines alike.
 
 ## 1. Scope
 
